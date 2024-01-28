@@ -3,3 +3,19 @@
 // const rootElement = document.getElementById('root');
 // const targetElement = findElementByClass(rootElement, 'my-class');
 // console.log(targetElement);
+function findElementByClass(root, className) {
+    if (root.children.length > 0) {
+        for (const element of root.children) {
+
+            if (element.className == className) {
+                return element;
+            }
+        }  
+         return "element not found";
+    }
+    return "element has no children";
+}
+//document.body.style.background = 'cornflowerblue';
+const rootElement = document.getElementById('root');
+const targetElement = findElementByClass(rootElement, 'my-class');
+console.log(targetElement);
